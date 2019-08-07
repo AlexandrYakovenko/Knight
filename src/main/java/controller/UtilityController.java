@@ -19,7 +19,7 @@ public class UtilityController {
     private View view;
     private Scanner sc;
 
-    public UtilityController() {}
+    
 
     public UtilityController(Model model, View view, Scanner sc) {
         this.model = model;
