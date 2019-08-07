@@ -1,5 +1,7 @@
 package model.entity.weapon;
 
+import java.util.Optional;
+
 public abstract class Weapon {
     private int price;
     private float weight;

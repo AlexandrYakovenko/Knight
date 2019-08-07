@@ -4,6 +4,7 @@ import static model.entity.equipment.Material.*;
 import static controller.RegexConstant.*;
 import static view.TextConstant.*;
 
+import model.UtilityAlgorithms;
 import model.entity.Knight;
 import model.entity.equipment.Equipment;
 import model.entity.weapon.*;
@@ -19,7 +20,7 @@ public class UtilityController {
     private View view;
     private Scanner sc;
 
-    
+    public UtilityController() {}
 
     public UtilityController(Model model, View view, Scanner sc) {
         this.model = model;
@@ -37,7 +38,7 @@ public class UtilityController {
         view.printMessage(view.printText(EMPTY_LINE));
 
         //Sorting elements
-        Equipment[] equipment = UtilityAlgorithms.sortEquipment(model.getKnight().getEquipment());
+        List<Equipment> equipment = UtilityAlgorithms.sortEquipment(model.getKnight().getEquipment());
         for (Equipment e : equipment) {
             view.printMessage(e.toString() + view.printText(WEIGHT) + e.getWeight());
         }
@@ -52,7 +53,7 @@ public class UtilityController {
         //Count range of Equipment
         List<Object> rangeEquipment =
                 UtilityAlgorithms.rangeEquipment(
-                        1000,3000,
+                        100,3000,
                         model.getKnight().getEquipment(),
                         model.getKnight().getWeapon());
         view.printMessage(rangeEquipment.toString());

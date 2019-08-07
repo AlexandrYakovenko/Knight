@@ -1,5 +1,6 @@
 package controller;
 
+import model.UtilityAlgorithms;
 import model.entity.equipment.Equipment;
 import model.entity.weapon.*;
 
@@ -67,7 +68,7 @@ public class UtilityAlgorithmsTest {
 
     @Test
     public void sortEquipment() {
-       Equipment[] equipmentArr = UtilityAlgorithms.sortEquipment(equipmentList);
+       List<Equipment> equipmentArr = UtilityAlgorithms.sortEquipment(equipmentList);
        assertNotNull(equipmentArr);
 
     }
